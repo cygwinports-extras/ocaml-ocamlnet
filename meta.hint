@@ -1,0 +1,12 @@
+category: OCaml Net
+requires: apache2-mod_netcgi ocaml-equeue-gtk2 ocaml-equeue-ssl ocaml-equeue-tcl ocaml-equeue ocaml-netcgi ocaml-netclient ocaml-nethttpd ocaml-netplex ocaml-netshm ocaml-netstring ocaml-netsys ocaml-pop ocaml-rpc-generator ocaml-rpc-ssl ocaml-rpc ocaml-shell ocaml-smtp
+sdesc: "OCaml networking module (meta-package)"
+ldesc: "This library focuses on application-level network protocols. 
+There are currently implementations for CGI, AJP (JServ), FastCGI, POP3, 
+SMTP, HTTP, FTP, SunRPC. Furthermore you can find a mail message parser, 
+and an HTML parser. There are also a number of string functions for such 
+protocols: support for escaping/unescaping and special encodings, a URL 
+parser and printer, character set conversion, and some more. This 
+library was previously known as netstring. Since version 2.2, it also 
+includes the libraries Equeue, RPC, and Netclient that were previously 
+separately distributed."
