@@ -1,13 +1,3 @@
---- origsrc/ocamlnet-2.2.9/src/equeue-ssl/Makefile	2007-11-01 17:12:32.000000000 -0500
-+++ src/ocamlnet-2.2.9/src/equeue-ssl/Makefile	2008-01-10 00:11:54.656250000 -0600
-@@ -5,6 +5,7 @@
- OBJECTS  = ssl_exts.cmo uq_ssl.cmo
- DOBJECTS = uq_ssl.mli
- COBJECTS = ssl_exts_stubs.o
-+LINK_OPTIONS = $(EQUEUE_SSL_LINK_OPTIONS)
- 
- INCLUDES += $(INC_EQUEUE)
- 
 --- origsrc/ocamlnet-2.2.9/src/netcgi2-apache/Makefile.def	2007-11-01 17:12:31.000000000 -0500
 +++ src/ocamlnet-2.2.9/src/netcgi2-apache/Makefile.def	2008-01-10 00:11:54.671875000 -0600
 @@ -51,11 +51,12 @@

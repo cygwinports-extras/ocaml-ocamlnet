@@ -1,21 +1,21 @@
 ORIG_PN="ocamlnet"
-APACHE_MAJOR=2
+#APACHE_MAJOR=2
 
-inherit apache ocaml tcl
+inherit ocaml tcl # apache
 
 DESCRIPTION="OCaml networking libraries"
 HOMEPAGE="http://ocamlnet.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${ORIG_PN}/${ORIG_PN}-${PV}.tar.gz"
-PATCH_URI="mirror://portage/dev-ml/${ORIG_PN}/files/build_w_camlp5.dpatch"
+PATCH_URI="mirror://portage/dev-ml/${ORIG_PN}/files/build_w_camlp5.dpatch
+           2.2.9-equeue-ssl.patch"
 
-n=0
 PKG_NAMES="${PN}"
 PKG_HINTS="meta"
-PKG_CONTENTS[$((n++))]="usr/share/doc/"
+ocaml_ocamlnet_CONTENTS="usr/share/doc/"
 
-PKG_NAMES+=" apache2-mod_netcgi"
-PKG_HINTS+=" apache"
-PKG_CONTENTS[$((n++))]="etc/ ${APXS_LIBEXECDIR#/}"
+#PKG_NAMES+=" apache2-mod_netcgi"
+#PKG_HINTS+=" apache"
+#apache2_mod_netcgi_CONTENTS="etc/ ${APXS_LIBEXECDIR#/}"
 
 for mod in equeue equeue-gtk2 equeue-ssl equeue-tcl \
            netcgi netclient nethttpd netplex netshm netstring netsys \
@@ -26,30 +26,26 @@ do
 
 	case ${mod} in
 		netcgi|nethttpd)
-			PKG_CONTENTS[${n}]="${OCAML_LIBDIR#/}/${mod}*/" ;;
-		*)  PKG_CONTENTS[${n}]="${OCAML_LIBDIR#/}/${mod}/" ;;
+			declare ocaml_${mod}_CONTENTS="${OCAML_LIBDIR#/}/${mod}*/" ;;
+		*)  declare ocaml_${mod/-/_}_CONTENTS="${OCAML_LIBDIR#/}/${mod}/" ;;
 	esac
 
 	case ${mod} in
 		equeue-ssl|equeue-tcl|netsys)
-			PKG_CONTENTS[${n}]+=" ${OCAML_STUBDIR#/}/dll${mod/-/_}.so*" ;;
-		netcgi)
-			PKG_CONTENTS[${n}]+=" ${OCAML_LIBDIR#/}/cgi/" ;;
-		netstring)
-			PKG_CONTENTS[${n}]+=" ${OCAML_STUBDIR#/}/dllnetaccel_c.so*" ;;
+			declare ocaml_${mod/-/_}_CONTENTS+=" ${OCAML_STUBDIR#/}/dll${mod/-/_}.so*" ;;
 		netplex|rpc-generator)
-			PKG_CONTENTS[${n}]+=" usr/bin/*${mod%-*}*.exe" ;;
+			declare ocaml_${mod/-/_}_CONTENTS+=" usr/bin/*${mod%-*}*.exe" ;;
 	esac
-
-	let n++
 done
+
+ocaml_netcgi_CONTENTS+=" ${OCAML_LIBDIR#/}/cgi/"
+ocaml_netstring_CONTENTS+=" ${OCAML_STUBDIR#/}/dllnetaccel_c.so*"
 
 src_compile() {
 	lndirs
 	cd ${B}
 
 	./configure \
-		-enable-apache -apxs /usr/sbin/apxs2 -apache /usr/sbin/httpd2 \
 		-enable-gtk2 \
 		-enable-ssl \
 		-enable-tcl -equeue-tcl-defs -I${TCL_INCLUDEDIR} -equeue-tcl-libs ${LIBTCL} \
@@ -66,6 +62,6 @@ src_install() {
 	cd ${B}
 	ocaml_install
 
-	doapachemod src/netcgi2-apache/mod_netcgi_apache.la
-	apache_postinst
+#	doapachemod src/netcgi2-apache/mod_netcgi_apache.la
+#	apache_postinst
 }

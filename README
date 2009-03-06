@@ -11,31 +11,27 @@ includes the libraries Equeue, RPC, and Netclient that were previously
 separately distributed.
 
 Runtime requirements:
-  cygwin-1.5.25-7
+  cygwin-1.5.25-15
   libncurses8-5.5-3
-  ocaml-3.10.0-1
+  ocaml-3.10.2-1
   ocaml-pcre-5.12.2-1
 (equeue-ssl,rpc-ssl)
   ocaml-ssl-0.4.2-1
-  openssl-0.9.8g-1
-(apache2-mod_netcgi)
-  apache2-2.2.6-1
-  libapr1-1.2.11-1
+  openssl-0.9.8i-1
 (ocaml-equeue-gtk)
   ocaml-lablgtk2-2.10.0-1
 (ocaml-equeue-tcl)
-  ocaml-labltk-3.10.0-1
-  tcl-8.4.16-2
+  ocaml-labltk-3.10.2-1
+  tcl-8.4.17-2
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.25-7
-  binutils-20060817-1
-  cygport-0.3.8-1
+  binutils-20080624-2
+  cygport-0.4.3-1
   gcc-core-3.4.4-3
-  make-3.81-1
-  ocaml-camlp5-5.07-1
-  ocaml-findlib-1.2.1-1
+  make-3.81-2
+  ocaml-camlp5-5.10-1
+  ocaml-findlib-1.2.2-1
 
 Canonical website:
   http://ocamlnet.sourceforge.net/
@@ -55,7 +51,6 @@ Build instructions:
   cygport ./ocamlnet-2.2.9-X.cygport all
 
 This will create:
-  /usr/src/apache2-mod_netcgi-2.2.9-X.tar.bz2
   /usr/src/ocamlnet-2.2.9-X-src.tar.bz2
   /usr/src/ocamlnet-2.2.9-X.tar.bz2
   /usr/src/ocaml-equeue-2.2.9-X.tar.bz2
@@ -79,12 +74,6 @@ This will create:
 -------------------------------------------
 
 Files included in the binary package:
-
-(apache2-mod_netcgi)
-  /etc/postinstall/ocamlnet.sh
-  /etc/preremove/ocamlnet.sh
-  /usr/lib/apache2/mod_netcgi_apache.la
-  /usr/lib/apache2/mod_netcgi_apache.so
 
 (ocaml-netcgi)
   /usr/lib/ocaml/3.10/cgi/META
@@ -622,6 +611,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 2.2.9-2 -----
+Rebuilt.
 
 ----- version 2.2.9-1 -----
 Initial release for Cygwin.
