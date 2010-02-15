@@ -51,10 +51,7 @@ src_compile() {
 		-with-nethttpd \
 		|| error "configure failed"
 
-	cygmake -j1 all opt \
-		EQUEUE_SSL_LINK_OPTIONS='-lssl -lcrypto' \
-		NETSYS_LINK_OPTIONS='-lunix' \
-		APACHE_OCAMLLIBS='-Wl,-lunix,-lcamlrun'
+	cygmake -j1 all opt
 }
 
 src_install() {
