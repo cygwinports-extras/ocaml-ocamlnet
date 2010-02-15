@@ -6,8 +6,7 @@ inherit ocaml tcl # apache
 DESCRIPTION="OCaml networking libraries"
 HOMEPAGE="http://ocamlnet.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${ORIG_PN}/${ORIG_PN}-${PV}.tar.gz"
-PATCH_URI="mirror://portage/dev-ml/${ORIG_PN}/files/build_w_camlp5.dpatch
-           2.2.9-equeue-ssl.patch"
+PATCH_URI="mirror://portage/dev-ml/${ORIG_PN}/files/build_w_camlp5.dpatch"
 
 PKG_NAMES="${PN}"
 PKG_HINTS="meta"
