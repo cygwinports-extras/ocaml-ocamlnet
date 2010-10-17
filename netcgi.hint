@@ -1,5 +1,5 @@
 category: OCaml Net
-requires: ocaml ocaml-netstring ocaml-netsys
+requires: ocaml-base ocaml-netstring ocaml-netsys
 external-source: ocaml-ocamlnet
 sdesc: "OCaml CGI module"
 ldesc: "This library focuses on application-level network protocols. 

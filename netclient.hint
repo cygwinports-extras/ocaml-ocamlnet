@@ -1,5 +1,5 @@
 category: OCaml Net
-requires: ocaml ocaml-equeue ocaml-netstring
+requires: ocaml-base ocaml-equeue ocaml-netstring
 external-source: ocaml-ocamlnet
 sdesc: "OCaml netclient module"
 ldesc: "This library focuses on application-level network protocols. 

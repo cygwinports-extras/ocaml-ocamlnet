@@ -1,5 +1,5 @@
 category: OCaml Net Web
-requires: apache2 libapr1 ocaml ocaml-netcgi
+requires: apache2 libapr1 ocaml-base ocaml-netcgi
 external-source: ocaml-ocamlnet
 sdesc: "Apache 2 OCaml CGI module"
 ldesc: "This library focuses on application-level network protocols. 

@@ -1,5 +1,5 @@
 category: OCaml Net
-requires: ocaml ocaml-netstring
+requires: ocaml-base ocaml-netstring
 external-source: ocaml-ocamlnet
 sdesc: "OCaml POP3 module"
 ldesc: "This library focuses on application-level network protocols. 

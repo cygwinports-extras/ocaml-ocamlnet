@@ -1,5 +1,5 @@
 category: OCaml Net
-requires: ocaml ocaml-netsys
+requires: ocaml-base ocaml-netsys
 external-source: ocaml-ocamlnet
 sdesc: "OCaml net shared memory module"
 ldesc: "This library focuses on application-level network protocols. 

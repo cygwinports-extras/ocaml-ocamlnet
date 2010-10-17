@@ -1,5 +1,5 @@
 category: OCaml Net
-requires: ocaml ocaml-netsys ocaml-pcre
+requires: ocaml-base ocaml-netsys ocaml-pcre
 external-source: ocaml-ocamlnet
 sdesc: "OCaml net string processing library"
 ldesc: "This library focuses on application-level network protocols. 

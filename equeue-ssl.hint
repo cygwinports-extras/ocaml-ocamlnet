@@ -1,5 +1,5 @@
 category: OCaml Net
-requires: ocaml ocaml-equeue ocaml-ssl
+requires: ocaml-base ocaml-equeue ocaml-ssl
 external-source: ocaml-ocamlnet
 sdesc: "OCaml SSL event queue module"
 ldesc: "This library focuses on application-level network protocols. 

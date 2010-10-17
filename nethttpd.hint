@@ -1,5 +1,5 @@
 category: OCaml Net
-requires: ocaml ocaml-equeue ocaml-netcgi ocaml-netstring ocaml-netplex
+requires: ocaml-base ocaml-equeue ocaml-netcgi ocaml-netstring ocaml-netplex
 external-source: ocaml-ocamlnet
 sdesc: "OCaml HTTPD daemon"
 ldesc: "This library focuses on application-level network protocols. 

@@ -1,5 +1,5 @@
 category: OCaml Net
-requires: ocaml ocaml-equeue ocaml-lablgtk2
+requires: ocaml-base ocaml-equeue ocaml-lablgtk2
 external-source: ocaml-ocamlnet
 sdesc: "OCaml GTK2 event queue module"
 ldesc: "This library focuses on application-level network protocols. 

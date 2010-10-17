@@ -11,25 +11,24 @@ includes the libraries Equeue, RPC, and Netclient that were previously
 separately distributed.
 
 Runtime requirements:
-  cygwin-1.7.1-1
-  libgcc1-4.3.4-3
+  cygwin-1.7.7-1
+  libgcc1-4.5.0-1
   libncurses10-5.7-18
-  ocaml-3.11.2-1
-  ocaml-lablgtk2-2.14.0-2
-  ocaml-pcre-6.0.1-2
-  ocaml-ssl-0.4.4-1
-  ocaml-labltk-3.11.2-1
-  tcl-8.5.6-2
+  ocaml-base-3.12.0-4
+  ocaml-lablgtk2-2.14.2-1
+  ocaml-pcre-6.1.0-1
+  ocaml-ssl-0.4.4-2
+  tcl-8.5.8-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  binutils-2.19.51-1
-  cygport-0.9.80-1
-  flexdll-0.20-2
-  gcc4-core-4.3.4-3
+  binutils-2.20.51-2
+  cygport-0.10.0-1
+  flexdll-0.25-1
+  gcc4-core-4.5.0-1
   make-3.81-2
-  ocaml-camlp5-5.12-1
-  ocaml-findlib-1.2.5-1
+  ocaml-camlp5-5.15-1
+  ocaml-findlib-1.2.6-1
 
 Canonical website:
   http://ocamlnet.sourceforge.net/
@@ -42,36 +41,38 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack ocamlnet-2.2.9-X-src.tar.bz2
+  unpack ocamlnet-3.0.3-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./ocamlnet-2.2.9-X.cygport all
+  cygport ./ocamlnet-3.0.3-X.cygport all
 
 This will create:
-  /usr/src/ocamlnet-2.2.9-X-src.tar.bz2
-  /usr/src/ocamlnet-2.2.9-X.tar.bz2
-  /usr/src/ocaml-equeue-2.2.9-X.tar.bz2
-  /usr/src/ocaml-equeue-gtk2-2.2.9-X.tar.bz2
-  /usr/src/ocaml-equeue-ssl-2.2.9-X.tar.bz2
-  /usr/src/ocaml-equeue-tcl-2.2.9-X.tar.bz2
-  /usr/src/ocaml-netcgi-2.2.9-X.tar.bz2
-  /usr/src/ocaml-netclient-2.2.9-X.tar.bz2
-  /usr/src/ocaml-nethttpd-2.2.9-X.tar.bz2
-  /usr/src/ocaml-netplex-2.2.9-X.tar.bz2
-  /usr/src/ocaml-netshm-2.2.9-X.tar.bz2
-  /usr/src/ocaml-netstring-2.2.9-X.tar.bz2
-  /usr/src/ocaml-netsys-2.2.9-X.tar.bz2
-  /usr/src/ocaml-pop-2.2.9-X.tar.bz2
-  /usr/src/ocaml-rpc-2.2.9-X.tar.bz2
-  /usr/src/ocaml-rpc-generator-2.2.9-X.tar.bz2
-  /usr/src/ocaml-rpc-ssl-2.2.9-X.tar.bz2
-  /usr/src/ocaml-shell-2.2.9-X.tar.bz2
-  /usr/src/ocaml-smtp-2.2.9-X.tar.bz2
+  /usr/src/ocamlnet-3.0.3-X-src.tar.bz2
+  /usr/src/ocamlnet-3.0.3-X.tar.bz2
+  /usr/src/ocaml-equeue-3.0.3-X.tar.bz2
+  /usr/src/ocaml-equeue-gtk2-3.0.3-X.tar.bz2
+  /usr/src/ocaml-equeue-ssl-3.0.3-X.tar.bz2
+  /usr/src/ocaml-netcgi-3.0.3-X.tar.bz2
+  /usr/src/ocaml-netclient-3.0.3-X.tar.bz2
+  /usr/src/ocaml-nethttpd-3.0.3-X.tar.bz2
+  /usr/src/ocaml-netplex-3.0.3-X.tar.bz2
+  /usr/src/ocaml-netshm-3.0.3-X.tar.bz2
+  /usr/src/ocaml-netstring-3.0.3-X.tar.bz2
+  /usr/src/ocaml-netsys-3.0.3-X.tar.bz2
+  /usr/src/ocaml-pop-3.0.3-X.tar.bz2
+  /usr/src/ocaml-rpc-3.0.3-X.tar.bz2
+  /usr/src/ocaml-rpc-generator-3.0.3-X.tar.bz2
+  /usr/src/ocaml-rpc-ssl-3.0.3-X.tar.bz2
+  /usr/src/ocaml-shell-3.0.3-X.tar.bz2
+  /usr/src/ocaml-smtp-3.0.3-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 3.0.3-1 -----
+Version bump, built for OCaml 3.12.0.
 
 ----- version 2.2.9-3 -----
 Initial release for Cygwin 1.7.

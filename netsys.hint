@@ -1,5 +1,5 @@
 category: OCaml Net
-requires: ocaml
+requires: ocaml-base
 external-source: ocaml-ocamlnet
 sdesc: "OCaml net OS-specific module"
 ldesc: "This library focuses on application-level network protocols. 
