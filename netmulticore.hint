@@ -1,7 +1,7 @@
 category: OCaml
-requires: ocaml-base ocaml-equeue ocaml-netsys
+requires: ocaml-base ocaml-netcamlbox ocaml-netplex
 external-source: ocaml-ocamlnet
-sdesc: "OCaml unix shell module"
+sdesc: "OCaml network server module"
 ldesc: "This library focuses on application-level network protocols. 
 There are currently implementations for CGI, AJP (JServ), FastCGI, POP3, 
 SMTP, HTTP, FTP, SunRPC. Furthermore you can find a mail message parser, 

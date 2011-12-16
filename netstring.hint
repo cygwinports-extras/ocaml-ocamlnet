@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base ocaml-netsys ocaml-pcre
 external-source: ocaml-ocamlnet
 sdesc: "OCaml net string processing library"

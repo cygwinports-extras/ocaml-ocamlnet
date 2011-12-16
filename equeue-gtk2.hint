@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base ocaml-equeue ocaml-lablgtk2
 external-source: ocaml-ocamlnet
 sdesc: "OCaml GTK2 event queue module"

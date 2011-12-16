@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base ocaml-netstring
 external-source: ocaml-ocamlnet
 sdesc: "OCaml SMTP module"

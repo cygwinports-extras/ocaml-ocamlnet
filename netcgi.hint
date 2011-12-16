@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base ocaml-netstring ocaml-netsys
 external-source: ocaml-ocamlnet
 sdesc: "OCaml CGI module"

@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base ocaml-netsys
 external-source: ocaml-ocamlnet
 sdesc: "OCaml event queue module"

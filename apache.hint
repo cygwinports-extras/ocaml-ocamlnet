@@ -1,4 +1,4 @@
-category: OCaml Net Web
+category: OCaml Web
 requires: apache2 libapr1 ocaml-base ocaml-netcgi
 external-source: ocaml-ocamlnet
 sdesc: "Apache 2 OCaml CGI module"

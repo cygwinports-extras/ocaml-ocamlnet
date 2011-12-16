@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base ocaml-equeue ocaml-netcgi ocaml-netstring ocaml-netsys ocaml-rpc
 external-source: ocaml-ocamlnet
 sdesc: "OCaml server framework module"

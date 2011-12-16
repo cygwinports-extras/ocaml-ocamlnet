@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base ocaml-equeue ocaml-ssl
 external-source: ocaml-ocamlnet
 sdesc: "OCaml SSL event queue module"

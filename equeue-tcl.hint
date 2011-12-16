@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base ocaml-equeue ocaml-labltk tcl
 external-source: ocaml-ocamlnet
 sdesc: "OCaml Tcl event queue module"

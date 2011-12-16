@@ -1,7 +1,7 @@
 ORIG_PN="ocamlnet"
 #APACHE_MAJOR=2
 
-inherit ocaml # tcl apache
+inherit ocaml tcl # apache
 
 DESCRIPTION="OCaml networking libraries"
 HOMEPAGE="http://projects.camlcity.org/projects/ocamlnet.html"
@@ -16,10 +16,9 @@ ocaml_ocamlnet_CONTENTS="usr/share/doc/"
 #PKG_HINTS+=" apache"
 #apache2_mod_netcgi_CONTENTS="etc/ ${APXS_LIBEXECDIR#/}"
 
-# equeue-tcl
-for mod in equeue equeue-gtk2 equeue-ssl netcamlbox \
-           netcgi netclient nethttpd netplex netshm netstring netsys \
-           pop rpc rpc-generator rpc-ssl shell smtp
+for mod in equeue equeue-gtk2 equeue-ssl equeue-tcl netcamlbox netcgi netclient \
+           netgssapi nethttpd netmulticore netplex netshm netstring netsys \
+           pop rpc rpc-auth-local rpc-generator rpc-ssl shell smtp
 do
 	PKG_NAMES+=" ocaml-${mod}"
 	PKG_HINTS+=" ${mod}"
@@ -27,12 +26,12 @@ do
 	case ${mod} in
 		netcgi|nethttpd)
 			declare ocaml_${mod}_CONTENTS="${OCAML_LIBDIR#/}/${mod}*/" ;;
-		*)  declare ocaml_${mod/-/_}_CONTENTS="${OCAML_LIBDIR#/}/${mod}/" ;;
+		*)  declare ocaml_${mod//-/_}_CONTENTS="${OCAML_LIBDIR#/}/${mod}/" ;;
 	esac
 
 	case ${mod} in
-		equeue-ssl|equeue-tcl|netsys)
-			declare ocaml_${mod/-/_}_CONTENTS+=" ${OCAML_STUBDIR#/}/dll${mod/-/_}.so*" ;;
+		equeue-ssl|equeue-tcl|netsys|rpc-auth-local)
+			declare ocaml_${mod//-/_}_CONTENTS+=" ${OCAML_STUBDIR#/}/dll${mod//-/_}.so*" ;;
 		netplex|rpc-generator)
 			declare ocaml_${mod/-/_}_CONTENTS+=" usr/bin/*${mod%-*}*.exe" ;;
 	esac
@@ -47,9 +46,9 @@ src_compile() {
 	./configure \
 		-enable-gtk2 \
 		-enable-ssl \
+		-enable-tcl -equeue-tcl-defs -I${TCL_INCLUDEDIR} -equeue-tcl-libs ${LIBTCL} \
 		-with-nethttpd \
 		|| error "configure failed"
-#		-enable-tcl -equeue-tcl-defs -I${TCL_INCLUDEDIR} -equeue-tcl-libs ${LIBTCL} \
 
 	cygmake -j1 all opt
 }

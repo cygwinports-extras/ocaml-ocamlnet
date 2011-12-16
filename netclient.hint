@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base ocaml-equeue ocaml-netstring
 external-source: ocaml-ocamlnet
 sdesc: "OCaml netclient module"

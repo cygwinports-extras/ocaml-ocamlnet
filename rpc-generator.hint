@@ -1,4 +1,4 @@
-category: OCaml Net
+category: OCaml
 requires: ocaml-base
 external-source: ocaml-ocamlnet
 sdesc: "OCaml RPC generator"
