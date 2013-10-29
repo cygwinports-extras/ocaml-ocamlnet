@@ -1,8 +1,9 @@
-ORIG_PN="ocamlnet"
 #APACHE_MAJOR=2
-
 inherit ocaml tcl # apache
 
+NAME="ocaml-ocamlnet"
+VERSION=3.7.3
+RELEASE=1
 CATEGORY="OCaml"
 SUMMARY="OCaml networking libraries"
 DESCRIPTION="This library focuses on application-level network protocols.
@@ -12,10 +13,11 @@ and an HTML parser. There are also a number of string functions for such
 protocols: support for escaping/unescaping and special encodings, a URL
 parser and printer, character set conversion, and some more."
 HOMEPAGE="http://projects.camlcity.org/projects/ocamlnet.html"
-SRC_URI="http://download.camlcity.org/download/${ORIG_PN}-${PV}.tar.gz"
-#PATCH_URI="mirror://portage/dev-ml/${ORIG_PN}/files/build_w_camlp5.dpatch"
+SRC_URI="http://download.camlcity.org/download/ocamlnet-${VERSION}.tar.gz"
+SRC_DIR="ocamlnet-${VERSION}"
+PATCH_URI="3.7.3-cygwin.patch"
 
-PKG_NAMES="${PN}"
+PKG_NAMES="${NAME}"
 ocaml_ocamlnet_CONTENTS="usr/share/doc/"
 
 #PKG_NAMES+=" apache2-mod_netcgi"
@@ -36,13 +38,17 @@ do
 
 	case ${mod} in
 		equeue-ssl|equeue-tcl|netsys|rpc-auth-local)
-			declare ocaml_${mod//-/_}_CONTENTS+=" ${OCAML_STUBDIR#/}/dll${mod//-/_}.so*" ;;
+			if defined ARCH_i686; then
+			declare ocaml_${mod//-/_}_CONTENTS+=" ${OCAML_STUBDIR#/}/dll${mod//-/_}.so*"
+			fi ;;
 		netplex|rpc-generator)
 			declare ocaml_${mod/-/_}_CONTENTS+=" usr/bin/*${mod%-*}*.exe" ;;
 	esac
 done
 
+if defined ARCH_i686; then
 ocaml_netstring_CONTENTS+=" ${OCAML_STUBDIR#/}/dllnetaccel_c.so*"
+fi
 
 src_compile() {
 	lndirs

@@ -1,0 +1,33 @@
+--- origsrc/ocamlnet-3.7.3/configure	2013-08-30 13:38:26.000000000 -0500
++++ src/ocamlnet-3.7.3/configure	2013-10-29 18:37:44.531722900 -0500
+@@ -345,9 +345,9 @@ case "$u" in
+ 	CYGWIN*)
+ 		printf "Cygwin, and target is: "
+ 		exec_suffix=".exe"
+-		path_sep=";"   # this is only for OCAMLPATH, ";" is correct for Cygwin
+ 		case `ocamlc -config | grep os_type` in
+ 		    *Win32*)
++		        path_sep=";"   # this is only for OCAMLPATH, ";" is correct for Cygwin
+                         if [ $cpp_set = 0 ]; then
+                             cpp=`realpath /bin/cpp | cygpath -m -f -`
+                         fi
+--- origsrc/ocamlnet-3.7.3/src/netsys/configure	2013-08-30 13:38:26.000000000 -0500
++++ src/ocamlnet-3.7.3/src/netsys/configure	2013-10-29 18:31:22.022844700 -0500
+@@ -400,7 +400,7 @@ let x = Unix.O_SHARE_DELETE;;
+ _EOF_
+ 
+ def_o_share_delete="-D NO_O_SHARE_DELETE"
+-if ocaml unix.cma tmp/t.ml >/dev/null 2>/dev/null; then
++if ocamlc unix.cma tmp/t.ml >/dev/null 2>/dev/null; then
+     echo "yes"
+     def_o_share_delete="-D HAVE_O_SHARE_DELETE"
+ else
+@@ -416,7 +416,7 @@ let x = Unix.O_CLOEXEC;;
+ _EOF_
+ 
+ def_o_cloexec="-D NO_O_CLOEXEC"
+-if ocaml unix.cma tmp/t.ml >/dev/null 2>/dev/null; then
++if ocamlc unix.cma tmp/t.ml >/dev/null 2>/dev/null; then
+     echo "yes"
+     def_o_cloexec="-D HAVE_O_CLOEXEC"
+ else
