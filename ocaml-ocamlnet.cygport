@@ -3,7 +3,7 @@ inherit ocaml tcl # apache
 
 NAME="ocaml-ocamlnet"
 VERSION=3.7.3
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="OCaml networking libraries"
 DESCRIPTION="This library focuses on application-level network protocols.
